@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+    <title>CSGO Skins</title>
+   
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Arvo" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
+    <link rel="stylesheet" href="style.css" media=screen>
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.runtime.js"></script>
+
+
+</head>
+
+
+<body>
+    
+    <div class="topnav">
+        <a class="active" href="index.html">Home</a>
+        <a href="players.html">View Players</a>
+        <a href="skins.html">View Skins</a>
+        <a href="orders.html">View Orders</a>
+        <a href="stickers.html">View Stickers</a>
+        <a href="guns.html">View Guns</a>
+        <a href="composite.html">View Composite</a>
+      </div>
+
+
+    
+
+      <h1 class="site-title" id="first"><a href="index.html">Orders</a></h1>
+
+
+      <p class="home" >This page is for viewing and adding new orders to the database
+      
+      </p>
+  
+      
+      <table>
+          <tr>
+            <th>order_id</th>
+            <th>order_date</th>
+            <th>total_price</th>
+          </tr>
+          <tr>
+            <td>1515151</td>
+            <td>3-17-2021</td>
+            <td>$150</td>
+            <td><input type ="button" value="Delete" class="delete" onclick="delete_row"></td>
+          </tr>
+          <tr>
+            <td>123435</td>
+            <td>7-16-2021</td>
+            <td>$200</td>
+            <td><input type ="button" value="Delete" class="delete" onclick="delete_row"></td>
+          </tr>
+        </table>
+  
+      <div class="title"> 
+          <div>Search Order</div>
+          <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Enter id.." title="Type in a category">
+          <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Enter order date.." title="Type in a category">
+          <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Enter Total price.." title="Type in a category">
+      </div>
+  
+      <button class="button">Submit</button>
+  
+      
+      <div class="title"> 
+          <div>Add Skin</div>
+          <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="id.." title="Type in a category">
+          <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="date.." title="Type in a category">
+          <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="price.." title="Type in a category">
+      </div>
+  
+      <button class="button">Submit</button>
+  
+      <div class="title"> 
+          <div>Update Order</div>
+          <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="id.." title="Type in a category">
+          <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="name.." title="Type in a category">
+          <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="price.." title="Type in a category">
+      </div>
+  
+      <button class="button">Submit</button>
+  
+    
+  
+ 
+  
+  
+      
+  
+      
+  
+    
+    
+    
+
+    
+
+    
+
+
+
+		<!-- Your page content goes here. 
+    <Article class="pagebottom"> 
+        r
+    </Article> -->
+</body>
+</html>
