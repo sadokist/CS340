@@ -1,0 +1,53 @@
+ <p class="home" >This page is for viewing and adding new stickers to the database
+      
+      </p>
+  
+<table class="tablestyling" id="stickertable">
+
+    {{!-- Header section --}}
+    <thead>
+
+        {{!-- For just the first row, we print each key of the row object as a header cell so we
+        know what each column means when the page renders --}}
+        <tr>
+            {{#each data.[0]}}
+            <th>
+                {{@key}}
+            </th>
+            {{/each}}
+        </tr>
+    </thead>
+
+    {{!-- Body section --}}
+    <tbody>
+
+        {{!-- For each row, print the id, fname, lname, homeworld and age, in order --}}
+        {{#each data}}
+        <tr>
+            <td>{{this.sticker_id}}</td>
+            <td>{{this.sticker_name}}</td>
+            
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+  
+<form id="search-sticker-html" method='GET' action='/stickers' class="title">
+    <label for="input-sticker_name">Search by Sticker Name: </label>
+    <input type="text" name="sticker_name" id="input-stickername-search">
+    <input type="submit" class="button">
+    <a href='/stickers' ><button class="button">Reset</button></a>
+</form>
+  
+      
+<form id="add-stickers-form-ajax" class="title">
+<h2>Add Sticker</h2>
+    <label for="input-stickername">Skin Name: </label>
+    <input type="text" name="input-stickername" id="input-stickername">
+   
+    <input class="button" type="submit">
+</form>
+
+{{!-- Embed our javascript to handle the DOM manipulation and AJAX request --}}
+<script src="./js/add_sticker.js"></script>
+  

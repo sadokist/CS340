@@ -1,0 +1,42 @@
+ <p class="home" >This page is for viewing and searching guns in the database
+    
+    </p>
+
+    
+<table class="tablestyling" id="skintable">
+
+    {{!-- Header section --}}
+    <thead>
+
+        {{!-- For just the first row, we print each key of the row object as a header cell so we
+        know what each column means when the page renders --}}
+        <tr>
+            {{#each data.[0]}}
+            <th>
+                {{@key}}
+            </th>
+            {{/each}}
+        </tr>
+    </thead>
+
+    {{!-- Body section --}}
+    <tbody>
+
+        {{!-- For each row, print the id, fname, lname, homeworld and age, in order --}}
+        {{#each data}}
+        <tr>
+            <td>{{this.gun_id}}</td>
+            <td>{{this.gun_name}}</td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+
+<form id="search-gun-html" method='GET' action='/guns' class="title">
+    <label for="input-gunname">Search by Gun Name: </label>
+    <input type="text" name="gun_name" id="input-gunname-search">
+    <input type="submit" class="button">
+    <a href='/guns' ><button class="button">Reset</button></a>
+</form>
+
+    

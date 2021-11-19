@@ -1,0 +1,81 @@
+ <p class="home" >This page is for viewing and adding new orders to the database
+      
+      </p>
+  
+<table class="tablestyling" id="ordertable">
+
+    {{!-- Header section --}}
+    <thead>
+
+        {{!-- For just the first row, we print each key of the row object as a header cell so we
+        know what each column means when the page renders --}}
+        <tr>
+            {{#each data.[0]}}
+            <th>
+                {{@key}}
+            </th>
+            {{/each}}
+        </tr>
+    </thead>
+
+    {{!-- Body section --}}
+    <tbody>
+
+        {{!-- For each row, print the id, fname, lname, homeworld and age, in order --}}
+        {{#each data}}
+        <tr>
+            <td>{{this.order_id}}</td>
+            <td>{{this.player_id}}</td>
+            <td>{{this.skin_id}}</td>
+            <td>{{this.sticker_id}}</td>
+            <td>{{this.order_date}}</td>
+            <td>{{this.total_price}}</td>
+            <td><input type ="button" value="Delete" class="button-del" onclick="delete_row"></td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+  
+<form id="search-order-html" method='GET' action='/orders' class="title">
+    <label for="input-playerid">Search by Player ID: </label>
+    <input type="text" name="playerid" id="input-playerid-search">
+    <input type="submit" class="button">
+    <a href='/orders' ><button class="button">Reset</button></a>
+</form>
+      
+<form id="add-orders-form-ajax" class="title">
+    <h2>Add Order</h2>
+    
+    <label for="input-playerid">Player ID: </label>
+    <input type="number" name="input-playerid" id="input-playerid">
+
+    <label for="input-skinid">Skin ID: </label>
+    <input type="number" name="input-skinid" id="input-skinid">
+
+    <label for="input-stickerid">Sticker ID: </label>
+    <input type="number" name="input-stickerid" id="input-stickerid">
+
+    <label for="input-orderdate">Order Date: </label>
+    <input type="date" name="input-orderdate" id="input-orderdate">
+
+    <label for="input-totalprice">Total Price: </label>
+    <input type="number" step="0.01" name="input-totalprice" id="input-totalprice">
+
+    <input class="button" type="submit">
+</form>
+
+{{!-- Embed our javascript to handle the DOM manipulation and AJAX request --}}
+<script src="./js/add_order.js"></script>
+  
+      <div class="title"> 
+          <div>Update Order</div>
+          <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="id.." title="Type in a category">
+          <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="player_id.." title="Type in a category">
+          <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="skin_id.." title="Type in a category">
+          <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="sticker_id.." title="Type in a category">
+          <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="date.." title="Type in a category">
+          <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="price.." title="Type in a category">
+      </div>
+  
+      <button class="button">Submit</button>
+  
