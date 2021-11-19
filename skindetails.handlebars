@@ -1,0 +1,56 @@
+<p class="home" >This page is for viewing and adding the skin details to the database
+      
+      </p>
+  
+      
+<table class="tablestyling" id="skindetailtable">
+
+    {{!-- Header section --}}
+    <thead>
+
+        {{!-- For just the first row, we print each key of the row object as a header cell so we
+        know what each column means when the page renders --}}
+        <tr>
+            {{#each data.[0]}}
+            <th>
+                {{@key}}
+            </th>
+            {{/each}}
+        </tr>
+    </thead>
+
+    {{!-- Body section --}}
+    <tbody>
+
+        {{!-- For each row, print the id, fname, lname, homeworld and age, in order --}}
+        {{#each data}}
+        <tr>
+            <td>{{this.skin_name}}</td>
+            <td>{{this.skin_price}}</td>
+            
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+  
+<form id="search-skindetails-html" method='GET' action='/skindetails' class="title">
+    <label for="input-skindetailname">Search by Skin Name: </label>
+    <input type="text" name="skindetail_name" id="input-skindetailname-search">
+    <input type="submit" class="button">
+    <a href='/skindetails' ><button class="button">Reset</button></a>
+</form>
+
+  
+<form id="add-skindetails-form-ajax" class="title">
+<h2>Add Skin</h2>
+    <label for="input-skinname">Skin Name: </label>
+    <input type="text" name="input-skinname" id="input-skinname">
+
+    <label for="input-skinprice">Skin Price: </label>
+    <input type="number" step="0.01" name="input-skinprice" id="input-skinprice">
+   
+    <input class="button" type="submit">
+</form>
+
+{{!-- Embed our javascript to handle the DOM manipulation and AJAX request --}}
+<script src="./js/add_skindetail.js"></script>

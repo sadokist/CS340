@@ -1,0 +1,56 @@
+
+      <p class="home" >This page is for viewing and adding the sticker details to the database
+      
+      </p>
+  
+<table class="tablestyling" id="stickerdetailtable">
+
+    {{!-- Header section --}}
+    <thead>
+
+        {{!-- For just the first row, we print each key of the row object as a header cell so we
+        know what each column means when the page renders --}}
+        <tr>
+            {{#each data.[0]}}
+            <th>
+                {{@key}}
+            </th>
+            {{/each}}
+        </tr>
+    </thead>
+
+    {{!-- Body section --}}
+    <tbody>
+
+        {{!-- For each row, print the id, fname, lname, homeworld and age, in order --}}
+        {{#each data}}
+        <tr>
+            <td>{{this.sticker_name}}</td>
+            <td>{{this.sticker_price}}</td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+  
+<form id="search-stickerdetail-html" method='GET' action='/stickerdetails' class="title">
+    <label for="input-stickerdetail_name">Search by Sticker Name: </label>
+    <input type="text" name="stickerdetail_name" id="input-stickerdetailname-search">
+    <input type="submit" class="button">
+    <a href='/stickerdetails' ><button class="button">Reset</button></a>
+</form>
+  
+      
+<form id="add-stickerdetails-form-ajax" class="title">
+<h2>Add Sticker</h2>
+    <label for="input-stickername">Skin Name: </label>
+    <input type="text" name="input-stickername" id="input-stickername">
+
+     <label for="input-stickerprice">Sticker Price: </label>
+    <input type="text" step="0.01" name="input-stickerprice" id="input-stickerprice">
+   
+    <input class="button" type="submit">
+</form>
+
+{{!-- Embed our javascript to handle the DOM manipulation and AJAX request --}}
+<script src="./js/add_stickerdetail.js"></script>
+  
